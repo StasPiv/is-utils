@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace StanislavPivovartsev\InterestingStatistics\Utils\FileReader;
 
+use StanislavPivovartsev\InterestingStatistics\Utils\Contract\FileReaderInterface;
+
 class LocalFileReader implements FileReaderInterface
 {
     /**

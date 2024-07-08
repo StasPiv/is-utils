@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace StanislavPivovartsev\InterestingStatistics\Utils\ArgumentsFetcher;
+namespace StanislavPivovartsev\InterestingStatistics\Utils\Contract;
 
 interface ArgumentsFetcherInterface
 {

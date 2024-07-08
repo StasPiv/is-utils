@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace StanislavPivovartsev\InterestingStatistics\Utils\RabbitMessageConverter;
+namespace StanislavPivovartsev\InterestingStatistics\Utils\Contract;
 
 use PhpAmqpLib\Message\AMQPMessage;
 

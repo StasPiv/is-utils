@@ -6,6 +6,7 @@ namespace StanislavPivovartsev\InterestingStatistics\Utils\MQConsumer;
 
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Connection\AbstractConnection;
+use StanislavPivovartsev\InterestingStatistics\Utils\Contract\MQConsumerInterface;
 
 class RabbitMQConsumer implements MQConsumerInterface
 {

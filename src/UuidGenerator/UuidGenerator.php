@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace StanislavPivovartsev\InterestingStatistics\Utils\UuidGenerator;
 
+use StanislavPivovartsev\InterestingStatistics\Utils\Contract\UuidGeneratorInterface;
+
 class UuidGenerator implements UuidGeneratorInterface
 {
     public function generate($data = null): string

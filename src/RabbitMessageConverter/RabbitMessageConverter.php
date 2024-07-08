@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace StanislavPivovartsev\InterestingStatistics\Utils\RabbitMessageConverter;
 
 use PhpAmqpLib\Message\AMQPMessage;
+use StanislavPivovartsev\InterestingStatistics\Utils\Contract\RabbitMessageConverterInterface;
 
 class RabbitMessageConverter implements RabbitMessageConverterInterface
 {

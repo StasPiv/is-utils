@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace StanislavPivovartsev\InterestingStatistics\Utils\UuidGenerator;
+namespace StanislavPivovartsev\InterestingStatistics\Utils\Contract;
 
 interface UuidGeneratorInterface
 {
