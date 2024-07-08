@@ -17,7 +17,7 @@ class MethodCallArgumentRemoval implements Mutator
     public static function getDefinition(): Definition
     {
         return new Definition(
-            'Removes the method call.',
+            'Removes the last argument of method call.',
             MutatorCategory::SEMANTIC_REDUCTION,
             null,
             <<<'DIFF'
@@ -51,6 +51,6 @@ class MethodCallArgumentRemoval implements Mutator
             return false;
         }
 
-        return $node->expr instanceof Node\Expr\MethodCall || $node->expr instanceof Node\Expr\StaticCall;
+        return $node->expr instanceof Node\Expr\MethodCall;
     }
 }
