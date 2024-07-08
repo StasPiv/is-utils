@@ -37,8 +37,14 @@ class MethodCallArgumentRemoval implements Mutator
         $oldMethodCall = $node->expr;
         $oldArgs = $oldMethodCall->getArgs();
 
-        // remove last passed argument
-        $newArgs = array_splice($oldArgs, 0, count($oldArgs) - 1);
+        if (count($oldArgs) === 0) {
+            yield new Node\Stmt\Nop();
+
+            return;
+        } else {
+            // remove last passed argument
+            $newArgs = array_splice($oldArgs, 0, count($oldArgs) - 1);
+        }
 
         yield new Node\Stmt\Expression(
             new Node\Expr\MethodCall($oldMethodCall->var, $oldMethodCall->name->name, $newArgs)
