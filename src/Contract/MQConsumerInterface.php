@@ -6,5 +6,5 @@ namespace StanislavPivovartsev\InterestingStatistics\Utils\Contract;
 
 interface MQConsumerInterface
 {
-    public function consume(string $queueName, callable $callback);
+    public function consume(string $queueName);
 }
