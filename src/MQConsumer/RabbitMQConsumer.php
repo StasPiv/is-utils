@@ -6,13 +6,14 @@ namespace StanislavPivovartsev\InterestingStatistics\Utils\MQConsumer;
 
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Connection\AbstractConnection;
+use PhpAmqpLib\Message\AMQPMessage;
 use StanislavPivovartsev\InterestingStatistics\Utils\Contract\MQConsumerInterface;
 
-class RabbitMQConsumer implements MQConsumerInterface
+abstract class RabbitMQConsumer implements MQConsumerInterface
 {
     public function __construct(
-        private readonly AbstractConnection $connection,
-        private readonly AMQPChannel    $channel,
+        protected AbstractConnection $connection,
+        protected AMQPChannel    $channel,
     ) {
     }
 
@@ -33,4 +34,6 @@ class RabbitMQConsumer implements MQConsumerInterface
         $this->channel->close();
         $this->connection->close();
     }
+
+    abstract protected function onReceive(AMQPMessage $message): void;
 }
