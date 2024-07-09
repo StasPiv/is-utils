@@ -6,18 +6,17 @@ namespace StanislavPivovartsev\InterestingStatistics\Utils\RabbitMessageConverte
 
 use PhpAmqpLib\Message\AMQPMessage;
 use StanislavPivovartsev\InterestingStatistics\Utils\Contract\RabbitMessageConverterInterface;
+use StanislavPivovartsev\InterestingStatistics\Utils\Model\AbstractMessageModel;
 
 class RabbitMessageConverter implements RabbitMessageConverterInterface
 {
     /**
-     * @param array<mixed> $data
+     * @param \StanislavPivovartsev\InterestingStatistics\Utils\Model\AbstractMessageModel $model
      *
      * @throws \JsonException
      */
-    public function convertToAMQPMessage(array $data): AMQPMessage
+    public function convertToAMQPMessage(AbstractMessageModel $model): AMQPMessage
     {
-        $message = json_encode($data, JSON_THROW_ON_ERROR);
-
-        return new AMQPMessage($message);
+        return new AMQPMessage((string) $model);
     }
 }
