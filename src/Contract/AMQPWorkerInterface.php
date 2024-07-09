@@ -8,5 +8,5 @@ use PhpAmqpLib\Message\AMQPMessage;
 
 interface AMQPWorkerInterface
 {
-    public function consume(AMQPMessage $receivedMessage): void;
+    public function onReceive(AMQPMessage $receivedMessage): void;
 }
