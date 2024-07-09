@@ -6,14 +6,17 @@ namespace StanislavPivovartsev\InterestingStatistics\Utils\Model;
 
 class PgnSaveModel extends AbstractMessageModel
 {
-    protected string $pgn;
+    public function __construct(
+        protected string $pgn,
+    ) {
+    }
 
     public function getPgn(): string
     {
         return $this->pgn;
     }
 
-    protected function getRequiredKeys(): array
+    protected static function getRequiredKeys(): array
     {
         return ['pgn'];
     }

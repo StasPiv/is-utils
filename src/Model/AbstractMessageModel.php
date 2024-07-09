@@ -8,7 +8,7 @@ abstract class AbstractMessageModel
 {
     abstract public function toArray(): array;
 
-    abstract protected function getRequiredKeys(): array;
+    abstract protected static function getRequiredKeys(): array;
 
     public function __toString(): string
     {
@@ -26,22 +26,15 @@ abstract class AbstractMessageModel
             throw new \JsonException("Can not decode body " . $body);
         }
 
-        $instance = new static();
-
-        foreach ($instance->getRequiredKeys() as $key) {
+        $arguments = [];
+        foreach (static::getRequiredKeys() as $key) {
             if (!isset($data[$key])) {
                 throw new \RuntimeException("Property $key is not found in the data " . $body);
             }
+
+            $arguments[] = $data[$key];
         }
 
-        foreach ($data as $key => $value) {
-            if (!property_exists($instance, $key)) {
-                throw new \RuntimeException("Property $key is not found in the model " . static::class);
-            }
-
-            $instance->{$key} = $value;
-        }
-
-        return $instance;
+        return new static(...$arguments);
     }
 }
