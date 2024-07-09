@@ -23,7 +23,7 @@ abstract class RabbitMQConsumer implements MQConsumerInterface
     public function consume(string $queueName, callable $callback): void
     {
         $this->channel->basic_qos(0, 1, true);
-        $this->channel->basic_consume($queueName, '', false, false, false, false, $callback);
+        $this->channel->basic_consume($queueName, '', false, false, false, false, [$this, 'onReceive']);
 
         try {
             $this->channel->consume();
