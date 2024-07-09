@@ -9,9 +9,9 @@ use StanislavPivovartsev\InterestingStatistics\Utils\Contract\MysqlConnectionFac
 
 class MysqlConnectionFactory implements MysqlConnectionFactoryInterface
 {
-    public function createMysqlConnection(): mysqli
+    public function createMysqlConnection(...$arguments): mysqli
     {
-        $mysqli = new mysqli(...func_get_args());
+        $mysqli = new mysqli(...$arguments);
 
         // Check connection
         if ($mysqli->connect_error) {

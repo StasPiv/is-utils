@@ -9,8 +9,8 @@ use StanislavPivovartsev\InterestingStatistics\Utils\Contract\RabbitConnectionFa
 
 class AMQPStreamConnectionFactory implements RabbitConnectionFactoryInterface
 {
-    public function createAmqpStreamConnection(): AMQPStreamConnection
+    public function createAmqpStreamConnection(...$arguments): AMQPStreamConnection
     {
-        return new AMQPStreamConnection(...func_get_args());
+        return new AMQPStreamConnection(...$arguments);
     }
 }

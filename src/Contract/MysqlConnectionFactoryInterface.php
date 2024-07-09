@@ -8,5 +8,5 @@ use mysqli;
 
 interface MysqlConnectionFactoryInterface
 {
-    public function createMysqlConnection(): mysqli;
+    public function createMysqlConnection(...$arguments): mysqli;
 }

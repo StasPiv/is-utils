@@ -8,5 +8,5 @@ use PhpAmqpLib\Connection\AMQPStreamConnection;
 
 interface RabbitConnectionFactoryInterface
 {
-    public function createAmqpStreamConnection(): AMQPStreamConnection;
+    public function createAmqpStreamConnection(...$arguments): AMQPStreamConnection;
 }
