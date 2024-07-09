@@ -6,5 +6,5 @@ namespace StanislavPivovartsev\InterestingStatistics\Utils\Contract;
 
 interface UuidGeneratorFactoryInterface
 {
-
+    public function createUuidGenerator(): UuidGeneratorInterface;
 }
