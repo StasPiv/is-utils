@@ -9,8 +9,8 @@ class MoveModel extends AbstractMessageModel
     public function __construct(
         private readonly int $moveNumber,
         private readonly string $side,
-        private readonly string $player,
-        private readonly string $opponent,
+        private readonly PlayerModel $player,
+        private readonly PlayerModel $opponent,
         private readonly string $moveNotation,
         private readonly string $fenBefore,
         private readonly string $fenAfter,
@@ -45,12 +45,12 @@ class MoveModel extends AbstractMessageModel
         return $this->side;
     }
 
-    public function getPlayer(): string
+    public function getPlayer(): PlayerModel
     {
         return $this->player;
     }
 
-    public function getOpponent(): string
+    public function getOpponent(): PlayerModel
     {
         return $this->opponent;
     }
