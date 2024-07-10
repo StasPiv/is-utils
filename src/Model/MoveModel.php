@@ -6,6 +6,8 @@ namespace StanislavPivovartsev\InterestingStatistics\Utils\Model;
 
 class MoveModel extends AbstractMessageModel
 {
+    private string $gameId;
+
     public function __construct(
         private readonly int $moveNumber,
         private readonly string $side,
@@ -33,6 +35,16 @@ class MoveModel extends AbstractMessageModel
     protected static function getRequiredKeys(): array
     {
         return ['moveNumber', 'side', 'player', 'opponent', 'moveNotation', 'fenBefore', 'fenAfter'];
+    }
+
+    public function getGameId(): string
+    {
+        return $this->gameId;
+    }
+
+    public function setGameId(string $gameId): void
+    {
+        $this->gameId = $gameId;
     }
 
     public function getMoveNumber(): int
