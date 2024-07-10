@@ -34,4 +34,39 @@ class MoveModel extends AbstractMessageModel
     {
         return ['moveNumber', 'side', 'player', 'opponent', 'moveNotation', 'fenBefore', 'fenAfter'];
     }
+
+    public function getMoveNumber(): int
+    {
+        return $this->moveNumber;
+    }
+
+    public function getSide(): string
+    {
+        return $this->side;
+    }
+
+    public function getPlayer(): string
+    {
+        return $this->player;
+    }
+
+    public function getOpponent(): string
+    {
+        return $this->opponent;
+    }
+
+    public function getMoveNotation(): string
+    {
+        return $this->moveNotation;
+    }
+
+    public function getFenBefore(): string
+    {
+        return $this->fenBefore;
+    }
+
+    public function getFenAfter(): string
+    {
+        return $this->fenAfter;
+    }
 }
