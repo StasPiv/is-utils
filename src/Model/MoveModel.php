@@ -22,6 +22,7 @@ class MoveModel extends AbstractMessageModel
     public function toArray(): array
     {
         return [
+            'gameId' => $this->gameId,
             'moveNumber' => $this->moveNumber,
             'side' => $this->side,
             'player' => $this->player,
