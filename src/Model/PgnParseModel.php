@@ -12,6 +12,16 @@ class PgnParseModel extends AbstractMessageModel
     ) {
     }
 
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    public function getPgn(): string
+    {
+        return $this->pgn;
+    }
+
     public function toArray(): array
     {
         return [
