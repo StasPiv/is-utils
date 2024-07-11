@@ -43,9 +43,11 @@ class MoveModel extends AbstractMessageModel
         return $this->gameId;
     }
 
-    public function setGameId(string $gameId): void
+    public function setGameId(string $gameId): MoveModel
     {
         $this->gameId = $gameId;
+
+        return $this;
     }
 
     public function getMoveNumber(): int
