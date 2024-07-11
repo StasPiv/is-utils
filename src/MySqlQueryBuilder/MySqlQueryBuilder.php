@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace StanislavPivovartsev\InterestingStatistics\Utils\MySqlQueryBuilder;
 
+use StanislavPivovartsev\InterestingStatistics\Utils\Contract\MySqlQueryBuilderInterface;
+
 class MySqlQueryBuilder implements MySqlQueryBuilderInterface
 {
     public function __construct(
